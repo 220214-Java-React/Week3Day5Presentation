@@ -1,10 +1,22 @@
 public class CustomThread extends Thread
 {
-    private String threadNum;
+    /**
+     * Just an identifier for the thread
+     */
+    private int threadNum;
 
-    public void BeginThread(Integer i)
+    /**
+     * Default constructor
+     */
+    public void BeginThread(){}
+
+    /**
+     * Constructor for when the thread is created (aka New state)
+     * @param i The id
+     */
+    public void BeginThread(int i)
     {
-        threadNum = i.toString();
+        threadNum = i;
         start();
     }
 

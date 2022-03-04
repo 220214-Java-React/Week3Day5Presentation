@@ -1,9 +1,19 @@
 public class NewThread implements Runnable
 {
+    /**
+     * Just an identifier for the thread
+     */
     int threadNum;
 
+    /**
+     * Default constructor
+     */
     public NewThread(){}
 
+    /**
+     * Constructor for when the thread is created (aka New state)
+     * @param i The id
+     */
     public NewThread(int i)
     {
         threadNum = i;
