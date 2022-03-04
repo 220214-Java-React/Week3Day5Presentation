@@ -35,6 +35,10 @@ public class Driver implements Runnable {
         Thread thread = new Thread(myTask);
         thread.start();
 
+
+
+        Thread thread2 = new Thread(() -> System.out.println("Runnable using Java 8 lambda approach"));
+        thread2.start();
         //ActionListeners -This only runs actionPerformed()method
         //Comparable - this can only use compareTo() method
 
