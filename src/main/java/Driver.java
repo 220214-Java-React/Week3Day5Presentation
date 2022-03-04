@@ -1,5 +1,5 @@
 
-public class InterfaceRunnable implements Runnable {
+public class Driver implements Runnable {
     //A functional interface contains 1 abstract method
     //From jav 8 and on lambda can be used in them to represent an instance of one
 
@@ -17,13 +17,13 @@ public class InterfaceRunnable implements Runnable {
 
     public static void main(String[] args) throws InterruptedException {
         // Tradition approach 1
-        InterfaceRunnable first = new InterfaceRunnable();
+        Driver first = new Driver();
         Thread traditionalThread = new Thread(first);
 
         traditionalThread.start();
 
         // Tradition approach 2
-        InterfaceRunnable second = new InterfaceRunnable();
+        Driver second = new Driver();
         Thread traditionalThread2 = new Thread(second);
         traditionalThread2.start();
 
