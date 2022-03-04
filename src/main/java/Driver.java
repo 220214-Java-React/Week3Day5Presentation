@@ -1,3 +1,6 @@
+import java.util.*;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class Driver implements Runnable {
     //A functional interface contains 1 abstract method
@@ -6,7 +9,7 @@ public class Driver implements Runnable {
     //Runnable, ActionListeners, and Comparable are some examples of them
 
 
-    //Runable - Does not allow input and Does not return a Value. It is a function without peramiters
+    //Runnable - Does not allow input and Does not return a Value. It is a function without parameters
 
 
     @Override
@@ -35,6 +38,33 @@ public class Driver implements Runnable {
         //ActionListeners -This only runs actionPerformed()method
         //Comparable - this can only use compareTo() method
 
+
+
+
+
+
+        short[]  array = new short[]{(short) 1, (short) 2, (short) 3};
+        byte[] transformedArray = transformArray(array, s -> (byte) (s * 2));
+
+        byte[] expectedArray = {(byte) 2, (byte) 4, (byte) 6};
+        assertArrayEquals(expectedArray, transformedArray);
+
+
     }
+
+
+    public static byte[] transformArray(short[] array, ShortToByteFunction function) {
+        byte[] transformedArray = new byte[array.length];
+        for (int i = 0; i < array.length; i++) {
+            transformedArray[i] = function.applyAsByte(array[i]);
+        }
+        return transformedArray;
+    }
+}
+
+
+@FunctionalInterface
+interface ShortToByteFunction {
+    byte applyAsByte(short s);
 }
 
